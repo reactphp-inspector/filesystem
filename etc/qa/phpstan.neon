@@ -1,0 +1,13 @@
+parameters:
+	ignoreErrors:
+		-
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			path: ../../src/FilesystemInstrumentation.php
+		-
+			identifier: shipmonk.deadConstant
+			path: ../../src/FilesystemInstrumentation.php
+
+#	ergebnis:
+#		noExtends:
+#			classesAllowedToBeExtended:
+#				- Psr\Log\AbstractLogger
