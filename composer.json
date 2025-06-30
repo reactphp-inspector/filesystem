@@ -28,9 +28,6 @@
             "ReactInspector\\Tests\\Filesystem\\": "tests"
         }
     },
-    "bin": [
-        "bin/mammatus"
-    ],
     "config": {
         "allow-plugins": {
             "dealerdirect/phpcodesniffer-composer-installer": true,
