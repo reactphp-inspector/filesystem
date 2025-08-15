@@ -12,7 +12,7 @@
         "react/filesystem": "^0.2@dev"
     },
     "require-dev": {
-        "wyrihaximus/async-test-utilities": "^9.4.1",
+        "wyrihaximus/async-test-utilities": "^9.4.2",
         "wyrihaximus/makefiles": "^0.5.0"
     },
     "autoload": {
