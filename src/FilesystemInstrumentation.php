@@ -11,7 +11,7 @@ use OpenTelemetry\API\Trace\SpanKind;
 use OpenTelemetry\API\Trace\StatusCode;
 use OpenTelemetry\Context\Context;
 use OpenTelemetry\Context\ContextStorageScopeInterface;
-use OpenTelemetry\SemConv\TraceAttributes;
+use OpenTelemetry\SemConv\Attributes\CodeAttributes;
 use OpenTelemetry\SemConv\Version;
 use React\Filesystem\AdapterInterface;
 use React\Filesystem\Node\DirectoryInterface;
@@ -74,9 +74,9 @@ final class FilesystemInstrumentation
                     ->setParent($parentContext)
                     ->setSpanKind(SpanKind::KIND_INTERNAL)
                     // code
-                    ->setAttribute(TraceAttributes::CODE_FUNCTION_NAME, sprintf('%s::%s', $class, $function))
-                    ->setAttribute(TraceAttributes::CODE_FILE_PATH, $filename)
-                    ->setAttribute(TraceAttributes::CODE_LINE_NUMBER, $lineno);
+                    ->setAttribute(CodeAttributes::CODE_FUNCTION_NAME, sprintf('%s::%s', $class, $function))
+                    ->setAttribute(CodeAttributes::CODE_FILE_PATH, $filename)
+                    ->setAttribute(CodeAttributes::CODE_LINE_NUMBER, $lineno);
 
                 $span    = $spanBuilder->startSpan();
                 $context = $span->storeInContext($parentContext);
@@ -109,7 +109,6 @@ final class FilesystemInstrumentation
                     $span->setStatus(StatusCode::STATUS_ERROR);
                     $span->end();
 
-                    /** @phpstan-ignore shipmonk.checkedExceptionInCallable */
                     throw $exception;
                 });
             },
@@ -134,9 +133,9 @@ final class FilesystemInstrumentation
                     ->setParent($parentContext)
                     ->setSpanKind(SpanKind::KIND_INTERNAL)
                     // code
-                    ->setAttribute(TraceAttributes::CODE_FUNCTION_NAME, sprintf('%s::%s', $class, $function))
-                    ->setAttribute(TraceAttributes::CODE_FILE_PATH, $filename)
-                    ->setAttribute(TraceAttributes::CODE_LINE_NUMBER, $lineno);
+                    ->setAttribute(CodeAttributes::CODE_FUNCTION_NAME, sprintf('%s::%s', $class, $function))
+                    ->setAttribute(CodeAttributes::CODE_FILE_PATH, $filename)
+                    ->setAttribute(CodeAttributes::CODE_LINE_NUMBER, $lineno);
 
                 $span    = $spanBuilder->startSpan();
                 $context = $span->storeInContext($parentContext);
@@ -171,7 +170,6 @@ final class FilesystemInstrumentation
                     $span->setStatus(StatusCode::STATUS_ERROR);
                     $span->end();
 
-                    /** @phpstan-ignore shipmonk.checkedExceptionInCallable */
                     throw $exception;
                 });
             },
@@ -196,9 +194,9 @@ final class FilesystemInstrumentation
                     ->setParent($parentContext)
                     ->setSpanKind(SpanKind::KIND_INTERNAL)
                     // code
-                    ->setAttribute(TraceAttributes::CODE_FUNCTION_NAME, sprintf('%s::%s', $class, $function))
-                    ->setAttribute(TraceAttributes::CODE_FILE_PATH, $filename)
-                    ->setAttribute(TraceAttributes::CODE_LINE_NUMBER, $lineno);
+                    ->setAttribute(CodeAttributes::CODE_FUNCTION_NAME, sprintf('%s::%s', $class, $function))
+                    ->setAttribute(CodeAttributes::CODE_FILE_PATH, $filename)
+                    ->setAttribute(CodeAttributes::CODE_LINE_NUMBER, $lineno);
 
                 $span    = $spanBuilder->startSpan();
                 $context = $span->storeInContext($parentContext);
@@ -233,7 +231,6 @@ final class FilesystemInstrumentation
                     $span->setStatus(StatusCode::STATUS_ERROR);
                     $span->end();
 
-                    /** @phpstan-ignore shipmonk.checkedExceptionInCallable */
                     throw $exception;
                 });
             },
