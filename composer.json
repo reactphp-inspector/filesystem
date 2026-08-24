@@ -9,7 +9,7 @@
     "open-telemetry/context": "^1.5.0",
     "open-telemetry/sdk": "^1.15",
     "open-telemetry/sem-conv": "^1.38.0",
-    "react/filesystem": "^0.2@dev"
+    "react/filesystem": "0.1.2@dev"
   },
   "require-dev": {
     "wyrihaximus/async-test-utilities": "^14.1.0",
