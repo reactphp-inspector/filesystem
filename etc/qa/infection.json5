@@ -20,5 +20,6 @@
                 "Mammatus\\ContainerFactory::create"
             ]
         }
-    }
+    },
+    "threads": 64
 }
